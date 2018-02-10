@@ -1,0 +1,12 @@
+<div>
+  <%= link_to 'Add new nudge', new_nudge_path %>
+</div>
+
+<div class='container'>
+  <% @nudges.each do |nudge| %>
+    <div class='row'>
+      <h2><%= nudge.title %></h2>
+      <p><%= nudge.body %></p>
+    </div>
+  <% end %>
+</div>
