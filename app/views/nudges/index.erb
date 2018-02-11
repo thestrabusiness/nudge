@@ -7,6 +7,7 @@
     <div class='row'>
       <h2><%= nudge.title %></h2>
       <p><%= nudge.body %></p>
+      <%= link_to 'Nudge', send_nudge_path(nudge) %>
     </div>
   <% end %>
 </div>

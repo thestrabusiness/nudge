@@ -22,8 +22,14 @@ class NudgesController < ApplicationController
   end
 
   def destroy
-    @nudge = Nudge.find(nudge_params[:id])
+    @nudge = Nudge.find(nudge_id)
     @nudge.destroy
+  end
+
+  def nudge
+    @nudge = Nudge.find(params[:nudge_id])
+    TwilioClient.send_message(to: TO_PHONE, from: TEST_PHONE, body: @nudge.body)
+    redirect_to nudges_path, notice: 'Nudged.'
   end
 
   private

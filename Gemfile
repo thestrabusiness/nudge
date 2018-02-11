@@ -8,12 +8,14 @@ end
 ruby '2.5.0'
 
 gem 'bootstrap'
+gem 'dotenv-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
+gem 'twilio-ruby'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
