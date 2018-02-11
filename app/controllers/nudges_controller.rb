@@ -9,7 +9,7 @@ class NudgesController < ApplicationController
 
   def create
     @nudge = Nudge.create(nudge_params)
-    redirect_to :index
+    redirect_to nudges_path
   end
 
   def edit
@@ -27,8 +27,7 @@ class NudgesController < ApplicationController
   end
 
   def nudge
-    @nudge = Nudge.find(params[:nudge_id])
-    TwilioClient.send_message(to: TO_PHONE, from: TEST_PHONE, body: @nudge.body)
+    NudgeJob.perform_later(params[:nudge_id])
     redirect_to nudges_path, notice: 'Nudged.'
   end
 
