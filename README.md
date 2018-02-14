@@ -1,24 +1,30 @@
-# README
+# Nudge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Running locally
 
-Things you may want to cover:
+1. Clone app
+2. `cd nudge`
+3. `bundle install`
+4. `rails db:setup`
+5. `bundle exec sidekiq`
+6. `rails s`
 
-* Ruby version
+### Requirements
 
-* System dependencies
+* Ruby 2.5.0
+* Redis
+* Postgres
+* A twilio dev account
 
-* Configuration
+### Twilio Dev Account
 
-* Database creation
+You'll need a Twilio developer account to obtain a phone number and API credentials.
+ Make a `.env` file in the app's root with the following content:
+ 
+ ```
+TWILIO_SID=<Your twilio user SID>
+TWILIO_TOKEN=<Your twilio auth token>
+TEST_PHONE=<The phone number you get from twilio>
+TO_PHONE=<A verified phone number on your dev account to send test messages to>
+ ```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
