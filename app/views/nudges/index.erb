@@ -8,6 +8,7 @@
       <h2><%= nudge.title %></h2>
       <p><%= nudge.body %></p>
       <%= link_to 'Nudge', send_nudge_path(nudge) %>
+      <%= link_to 'Delete', nudge_path(nudge), method: :delete %>
     </div>
   <% end %>
 </div>

@@ -18,12 +18,13 @@ class NudgesController < ApplicationController
 
   def update
     @nudge = Nudge.find(nudge_params[:id])
-    @nudge.update
+    @nudge.update(nudge_params)
   end
 
   def destroy
-    @nudge = Nudge.find(nudge_id)
+    @nudge = Nudge.find(params[:id])
     @nudge.destroy
+    redirect_to nudges_path, notice: 'Nudge deleted'
   end
 
   def nudge

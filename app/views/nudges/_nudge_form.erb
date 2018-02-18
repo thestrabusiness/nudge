@@ -1,0 +1,7 @@
+
+<%= simple_form_for @nudge do |form| %>
+  <%= form.input :title %>
+  <%= form.input :body %>
+  <%= form.input :time_window_id, as: :select,  collection: TimeWindow.all.collect{ |t| [t.name, t.id] } %>
+  <%= form.button :submit %>
+<% end %>

@@ -1,3 +1,3 @@
 class Nudge < ApplicationRecord
-  validates :title, :body, presence: true
+  validates :title, :body, :time_window_id, presence: true
 end
