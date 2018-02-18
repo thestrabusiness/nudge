@@ -1,0 +1,3 @@
+class TimeWindow < ApplicationRecord
+
+end

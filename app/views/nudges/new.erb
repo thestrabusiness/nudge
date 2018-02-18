@@ -1,5 +1,6 @@
 <%= form_for @nudge do |form| %>
   <%= form.text_field :title %>
   <%= form.text_field :body %>
+  <%= form.select  :time_window_id, TimeWindow.all.collect{ |t| [t.name, t.id] } %>
   <%= form.submit %>
 <% end %>
